@@ -1,0 +1,6 @@
+.VoteSection{
+  position: relative;
+}
+.VoteSection .card-img-top{
+  max-height: 40vh;
+}

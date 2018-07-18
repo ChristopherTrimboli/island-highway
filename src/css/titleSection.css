@@ -1,9 +1,11 @@
 .TitleSection{
   margin-top: 56px;
+  position: relative;
 }
 .TitleSection .jumbotron{
   background-image: url("../images/vancouver-island-sunset.jpg");
   background-size: cover;
+  border-radius: 0;
 }
 .TitleSection .jumboInner{
   background-color: rgba(255, 255, 255, 0.6);
