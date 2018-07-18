@@ -1,3 +1,13 @@
 .PlanSection{
   position: relative;
 }
+.PlanSection .card-img-top{
+  max-height: 650px;
+  max-width: 650px;
+}
+.PlanSection .card{
+  border: none;
+}
+.PlanSection .nav-item{
+  cursor: pointer;
+}

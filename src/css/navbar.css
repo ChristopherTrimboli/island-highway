@@ -1,1 +1,3 @@
-
+.Navbar a:not([href]):not([tabindex]){
+  color: white;
+}
