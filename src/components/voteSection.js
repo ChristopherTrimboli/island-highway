@@ -1,28 +1,97 @@
 import React, { Component } from 'react';
 import '../css/voteSection.css';
 import background from '../images/rocks.jpg';
+import firebase from "firebase";
 
 class VoteSection extends Component {
 
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      noVotes: "",
+      yesVotes: ""
+    };
+    this.getVotes = this.getVotes.bind(this);
+  }
 
+  componentDidMount(){
+    this.getVotes()
+  }
+
+  getVotes(){
+    const config = {
+      apiKey: "AIzaSyBRoCF05syj98wyzInngl3ZTK3OzTgOv0M",
+      authDomain: "new-island-highway.firebaseapp.com",
+      databaseURL: "https://new-island-highway.firebaseio.com",
+      storageBucket: "new-island-highway.appspot.com"
+    };
+    firebase.initializeApp(config);
+
+    const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
+    const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
+
+    noRef.once('value', (snapshot) => {
+      let noVotes = snapshot.val();
+      this.setState({
+        noVotes: noVotes,
+      });
+    });
+
+    yesRef.once('value', (snapshot) => {
+      let yesVotes = snapshot.val();
+      this.setState({
+        yesVotes: yesVotes,
+      });
+    });
+
+  }
+
+  updateVotes(choice){
+    const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
+    const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
+
+    if(choice === 'no'){
+      const noVotes = {
+        noVotes: this.state.noVotes + 1,
+      };
+      noRef.set(noVotes.noVotes);
+      this.setState({
+        noVotes: this.state.noVotes + 1
+      });
+    }
+
+    if(choice === 'yes'){
+      const yesVotes = {
+        yesVotes: this.state.yesVotes + 1,
+      };
+      yesRef.set(yesVotes.yesVotes);
+      this.setState({
+        yesVotes: this.state.yesVotes + 1
+      });
+    }
+  }
+
+  render() {
     return (
       <div className="VoteSection">
         <div className="card mb-3">
           <img className="card-img-top" src={background} alt="background"/>
             <div className="card-body">
-              <h5 className="card-title">Make your Vote heard!</h5>
-              <p className="card-text">This will be where the vote counter is.</p>
-
-              <button type="button" className="btn btn-primary m-3" onClick={() => { this.updateVotes('yes') }}>Yes</button>
-
-              <button type="button" className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>No</button>
-
-              <h1>0</h1>
-
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+              <h3 className="card-title pb-3">Make your Vote heard!</h3>
+              <div className='row'>
+                <div className='col-6'>
+                  <h1 className='noCounter'>{this.state.noVotes}</h1>
+                  <hr/>
+                  <p>People who vote "No"</p>
+                  <button type="button" className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>Vote No</button>
+                </div>
+                <div className='col-6'>
+                  <h1 className='yesCounter'>{this.state.yesVotes}</h1>
+                  <hr/>
+                  <p>People who vote "Yes"</p>
+                  <button type="button" className="btn btn-success m-3" onClick={() => { this.updateVotes('yes') }}>Vote Yes</button>
+                </div>
+              </div>
             </div>
         </div>
       </div>

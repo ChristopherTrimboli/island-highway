@@ -4,3 +4,12 @@
 .VoteSection .card-img-top{
   max-height: 40vh;
 }
+.VoteSection .noCounter{
+  color: red;
+}
+.VoteSection .yesCounter{
+  color: green;
+}
+.VoteSection hr{
+  width: 50%;
+}
