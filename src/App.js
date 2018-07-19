@@ -5,12 +5,6 @@ import Footer from "./components/footer";
 import TitleSection from "./components/titleSection";
 import PlanSection from "./components/planSection";
 import VoteSection from "./components/voteSection";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import reduxThunk from "redux-thunk";
-import reducers from "./reducers";
-
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 class App extends Component {
   render() {
@@ -23,9 +17,7 @@ class App extends Component {
             <PlanSection/>
           </div>
         </div>
-        <Provider store={store}>
         <VoteSection/>
-        </Provider>
         <Footer/>
       </div>
     );

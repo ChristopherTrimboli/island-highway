@@ -2,17 +2,13 @@
   "name": "island-highway",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/",
   "dependencies": {
     "ajv": "^6.5.2",
-    "express": "^4.16.2",
     "firebase": "^5.2.0",
+    "outdated": "^0.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-redux": "^5.0.7",
-    "react-scripts": "1.1.4",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
