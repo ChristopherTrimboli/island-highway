@@ -76,7 +76,7 @@ class PlanSection extends Component {
                   </div>
                   <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12'>
                     <div className="card-body">
-                      <h1 className='p-2'><span className='TenHeader'>10</span> Year Plan</h1>
+                      <h1 className='p-1'><span className='TenHeader'>10</span> Year Plan</h1>
                       <div className='text-left'>
                         <p className="card-text lead font-weight-normal">This would be the, shortest, straightest, low altitude route between Victoria and Nanaimo. It would help to reduce the time to travel from Victoria to Nanaimo to one hour or less. </p>
                         <p className='card-text lead font-weight-normal'>Weather conditions of traveling at higher altitudes would not happen, there by reducing the number of accidents and deaths of going over the Malahat and other inland routes. this would also help to reduce the amount of fuel needed to travel between Victoria and Nanaimo.
@@ -113,7 +113,7 @@ class PlanSection extends Component {
                   </div>
                   <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12'>
                     <div className="card-body">
-                      <h1 className='p-2'><span className='TwentyHeader'>20</span> Year Plan</h1>
+                      <h1 className='p-1'><span className='TwentyHeader'>20</span> Year Plan</h1>
                       <div className='text-left'>
                         <p className='card-text lead font-weight-normal'>This could include, building a road, from new Island Highway Salt Spring Island Bridge route and a bridge from Salt Spring Island to Prevost Island to Galliano and then moving the ferry terminal from Swartz Bay to Galliano Island.
                         </p>
@@ -151,7 +151,7 @@ class PlanSection extends Component {
                   </div>
                   <div className='col-lg-6 col-md-12 col-sm-12 col-xs-12'>
                     <div className="card-body">
-                      <h1 className='p-2'><span className='FiftyHeader'>50</span> Year Plan</h1>
+                      <h1 className='p-1'><span className='FiftyHeader'>50</span> Year Plan</h1>
                       <div className='text-left'>
                         <p className='card-text lead font-weight-normal'>This could include the building of a bridge, tunnel or some sort of solid connector, to join Vancouver Island and the lower mainland together.
                         </p>
