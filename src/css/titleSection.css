@@ -17,3 +17,6 @@
 .TitleSection .lead{
   font-size: 25px;
 }
+.TitleSection .jumbotron{
+  margin-bottom: 0 !important;
+}

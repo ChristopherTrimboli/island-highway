@@ -11,3 +11,59 @@
 .PlanSection .nav-item{
   cursor: pointer;
 }
+.PlanSection .nav-link{
+  border: #919191 solid 1px;
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TenTab{
+  background-color: rgba(255, 0, 0, 0.31) !important;
+  color: black;
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TenTab:hover{
+  background-color: rgba(255, 0, 0, 0.5) !important;
+  color: black;
+}
+.PlanSection .TenHeader{
+  color: rgba(255, 0, 0, 0.51);
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TwentyTab{
+  background-color: rgba(0, 128, 0, 0.31) !important;
+  color: black;
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TwentyTab:hover{
+  background-color: rgba(0, 128, 0, 0.51) !important;
+  color: black;
+}
+.PlanSection .TwentyHeader{
+  color:  rgba(0, 128, 0, 0.5)
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .FiftyTab{
+  background-color: rgba(147, 112, 219, 0.31) !important;
+  color: black;
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .FiftyTab:hover{
+  background-color: rgba(147, 112, 219, 0.51) !important;
+  color: black;
+}
+.PlanSection .FiftyHeader{
+  color: rgba(147, 112, 219, 0.51);
+}
+.PlanSection .card-header{
+  padding-bottom: 0;
+}
+.PlanSection .pt-4, .py-4{
+  padding-top: 0 !important;
+}
+.PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  color: black;
+  font-size: large;
+}
+.PlanSection .TenTab.active{
+  background-color: rgba(255, 0, 0, 0.5) !important;
+}
+.PlanSection .TwentyTab.active{
+  background-color: rgba(0, 128, 0, 0.5) !important;
+}
+.PlanSection .FiftyTab.active{
+  background-color: rgba(147, 112, 219, 0.5) !important;
+}
+
