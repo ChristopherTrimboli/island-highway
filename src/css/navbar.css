@@ -4,3 +4,6 @@
 .Navbar .nav-item{
   cursor: pointer;
 }
+.Navbar .navbar{
+  background-color: #0f1834;
+}

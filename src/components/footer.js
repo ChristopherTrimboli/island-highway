@@ -4,7 +4,7 @@ import '../css/footer.css';
 class Footer extends Component {
   render() {
     return (
-      <div className="Footer bg-dark justify-content-center d-flex">
+      <div className="Footer justify-content-center d-flex">
         <p className='lead align-self-center'>New Island Highway &copy; 2018</p>
       </div>
     );
