@@ -22,7 +22,7 @@ class Navbar extends Component {
     return (
       <div className="Navbar">
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand">New Island Highway</a>
+          <a className="navbar-brand"><i className="fas fa-road"/> New Island Highway</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"/>
