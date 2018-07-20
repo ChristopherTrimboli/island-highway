@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import '../css/navbar.css';
 
 class Navbar extends Component {
+
+  jumpTo(section){
+    let div = document.getElementById(section);
+    if(div !== null){
+      let distanceToTop = div.getBoundingClientRect().top;
+      window.scrollBy({
+        top: distanceToTop - 50, // could be negative value
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+    else{
+      console.log('section not bound to ID')
+    }
+  }
+
   render() {
     return (
       <div className="Navbar">
@@ -13,10 +29,10 @@ class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-item nav-link">About</a>
-              <a className="nav-item nav-link">The Plan</a>
-              <a className="nav-item nav-link">Vote</a>
-              <a className="nav-item nav-link">Get Involved</a>
+              <a className="nav-item nav-link" onClick={() => {this.jumpTo('About')}}>About</a>
+              <a className="nav-item nav-link" onClick={() => {this.jumpTo('Plan')}}>The Plan</a>
+              <a className="nav-item nav-link" onClick={() => {this.jumpTo('Vote')}}>Vote</a>
+              <a className="nav-item nav-link" onClick={() => {this.jumpTo('Contact')}}>Get Involved</a>
             </div>
           </div>
         </nav>

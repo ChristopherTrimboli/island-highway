@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/voteSection.css';
-import background from '../images/rocks.jpg';
 import firebase from "firebase";
 
 class VoteSection extends Component {
@@ -73,23 +72,27 @@ class VoteSection extends Component {
 
   render() {
     return (
-      <div className="VoteSection">
+      <div className="VoteSection" id='Vote'>
         <div className="card mb-3">
-          <img className="card-img-top" src={background} alt="background"/>
             <div className="card-body">
               <h3 className="card-title pb-3">Make your Vote heard!</h3>
-              <div className='row'>
-                <div className='col-6'>
+              <div className='row p-3'>
+                <div className='col-6 p-0'>
                   <h1 className='noCounter'>{this.state.noVotes}</h1>
                   <hr/>
-                  <p>People who vote "No"</p>
+                  <p>People who vote: "<span className='noSpan'>No</span>"</p>
                   <button type="button" className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>Vote No</button>
                 </div>
-                <div className='col-6'>
+                <div className='col-6 p-0'>
                   <h1 className='yesCounter'>{this.state.yesVotes}</h1>
                   <hr/>
-                  <p>People who vote "Yes"</p>
+                  <p>People who vote: "<span className='yesSpan'>Yes</span>"</p>
                   <button type="button" className="btn btn-success m-3" onClick={() => { this.updateVotes('yes') }}>Vote Yes</button>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col'>
+                  <small className="text-muted">Vote data from realtime Firebase database</small>
                 </div>
               </div>
             </div>

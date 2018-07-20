@@ -13,3 +13,9 @@
 .VoteSection hr{
   width: 50%;
 }
+.VoteSection .noSpan{
+  color: red;
+}
+.VoteSection .yesSpan{
+  color: green;
+}

@@ -24,7 +24,7 @@
   color: black;
 }
 .PlanSection .TenHeader{
-  color: rgba(255, 0, 0, 0.51);
+  color: rgb(255, 0, 0);
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TwentyTab{
   background-color: rgba(0, 128, 0, 0.31) !important;
@@ -35,7 +35,7 @@
   color: black;
 }
 .PlanSection .TwentyHeader{
-  color:  rgba(0, 128, 0, 0.5)
+  color: rgb(0, 128, 0)
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .FiftyTab{
   background-color: rgba(147, 112, 219, 0.31) !important;
@@ -46,7 +46,7 @@
   color: black;
 }
 .PlanSection .FiftyHeader{
-  color: rgba(147, 112, 219, 0.51);
+  color: rgb(147, 112, 219);
 }
 .PlanSection .card-header{
   padding-bottom: 0;

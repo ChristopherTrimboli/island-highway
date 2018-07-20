@@ -20,3 +20,6 @@
 .TitleSection .jumbotron{
   margin-bottom: 0 !important;
 }
+a.btn{
+  color: white;
+}

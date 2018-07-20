@@ -50,7 +50,7 @@ class PlanSection extends Component {
 
   render() {
     return (
-      <div className="PlanSection">
+      <div className="PlanSection" id='Plan'>
 
         <div className='mapHolder pt-4 pb-4'>
 
