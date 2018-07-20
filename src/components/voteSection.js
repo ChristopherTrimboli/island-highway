@@ -76,23 +76,28 @@ class VoteSection extends Component {
         <div className="card mb-3">
             <div className="card-body">
               <h3 className="card-title pb-3">Make your Vote heard!</h3>
+              <div className='row'>
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 fa-4x'>
+                  <i className="fas fa-user-friends"/>
+                </div>
+              </div>
               <div className='row p-3'>
-                <div className='col-6 p-0'>
+                <div className='column col-lg-6 col-md-6 col-sm-6 col-xs-6 p-0'>
                   <h1 className='noCounter'>{this.state.noVotes}</h1>
                   <hr/>
-                  <p>People who vote: "<span className='noSpan'>No</span>"</p>
+                  <p>Votes for: "<span className='noSpan'>No</span>"</p>
                   <button type="button" className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>Vote No</button>
                 </div>
-                <div className='col-6 p-0'>
+                <div className='column col-lg-6 col-md-6 col-sm-6 col-xs-6 p-0'>
                   <h1 className='yesCounter'>{this.state.yesVotes}</h1>
                   <hr/>
-                  <p>People who vote: "<span className='yesSpan'>Yes</span>"</p>
+                  <p>Votes for: "<span className='yesSpan'>Yes</span>"</p>
                   <button type="button" className="btn btn-success m-3" onClick={() => { this.updateVotes('yes') }}>Vote Yes</button>
                 </div>
               </div>
               <div className='row'>
                 <div className='col'>
-                  <small className="text-muted">Vote data from realtime Firebase database</small>
+                  <small className="text-muted">Votes data from realtime Firebase database</small>
                 </div>
               </div>
             </div>

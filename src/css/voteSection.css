@@ -19,3 +19,6 @@
 .VoteSection .yesSpan{
   color: green;
 }
+.VoteSection .column{
+  width: 50%;
+}
