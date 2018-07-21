@@ -22,3 +22,6 @@
 .VoteSection .column{
   width: 50%;
 }
+.VoteSection .questionText{
+  font-weight: 400;
+}
