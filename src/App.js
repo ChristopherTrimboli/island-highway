@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import TitleSection from "./components/titleSection";
 import PlanSection from "./components/planSection";
 import VoteSection from "./components/voteSection";
+import GetInvolved from "./components/getInvolved";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           </div>
         </div>
         <VoteSection/>
+        <GetInvolved/>
         <Footer/>
       </div>
     );

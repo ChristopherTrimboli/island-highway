@@ -22,7 +22,7 @@ class VoteSection extends Component {
   }
 
   componentDidMount(){
-    let thanksDiv = document.getElementById('thanksDiv').hidden = true;
+    document.getElementById('thanksDiv').hidden = true;
     this.getVotes()
   }
 
@@ -72,14 +72,14 @@ class VoteSection extends Component {
         this.setState({
           voted: true
         });
-        let noButton = document.getElementById('noButton').disabled = true;
-        let yesButton = document.getElementById('yesButton').disabled = true;
-        let thanksDiv = document.getElementById('thanksDiv').hidden = false;
+        document.getElementById('noButton').disabled = true;
+        document.getElementById('yesButton').disabled = true;
+        document.getElementById('thanksDiv').hidden = false;
       }
       else {
-        let noButton = document.getElementById('noButton').disabled = true;
-        let yesButton = document.getElementById('yesButton').disabled = true;
-        let thanksDiv = document.getElementById('thanksDiv').hidden = false;
+        document.getElementById('noButton').disabled = true;
+        document.getElementById('yesButton').disabled = true;
+        document.getElementById('thanksDiv').hidden = false;
       }
     }
 

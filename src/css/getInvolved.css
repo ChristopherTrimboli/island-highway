@@ -1,0 +1,16 @@
+.GetInvolved{
+  position: relative;
+}
+.GetInvolved h5{
+  font-size: 17px;
+  color: #192573;
+}
+.GetInvolved .far{
+
+}
+.GetInvolved a{
+  color: inherit;
+}
+@media only screen and (max-width: 600px) {
+
+}

@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer justify-content-center d-flex">
-        <p className='lead align-self-center'>New Island Highway &copy; 2018</p>
+        <p className='lead align-self-center mt-3'>New Island Highway &copy; 2018</p>
       </div>
     );
   }
