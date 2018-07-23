@@ -14,10 +14,11 @@
 }
 .PlanSection .nav-link{
   border: #919191 solid 1px;
+  font-weight: 500 !important;
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TenTab{
   background-color: rgba(255, 0, 0, 0.31) !important;
-  color: black;
+  color: black !important;
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TenTab:hover{
   background-color: rgba(255, 0, 0, 0.5) !important;
@@ -28,7 +29,7 @@
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TwentyTab{
   background-color: rgba(0, 128, 0, 0.31) !important;
-  color: black;
+  color: black !important;
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .TwentyTab:hover{
   background-color: rgba(0, 128, 0, 0.51) !important;
@@ -39,7 +40,7 @@
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .FiftyTab{
   background-color: rgba(147, 112, 219, 0.31) !important;
-  color: black;
+  color: black !important;
 }
 .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .FiftyTab:hover{
   background-color: rgba(147, 112, 219, 0.51) !important;
@@ -59,13 +60,16 @@
   font-size: large;
 }
 .PlanSection .TenTab.active{
-  background-color: rgba(255, 0, 0, 0.61) !important;
+  background-color: rgba(255, 0, 0, 0.81) !important;
+  color: white !important;
 }
 .PlanSection .TwentyTab.active{
-  background-color: rgba(0, 128, 0, 0.5) !important;
+  background-color: rgba(0, 128, 0, 0.8) !important;
+  color: white !important;
 }
 .PlanSection .FiftyTab.active{
-  background-color: rgba(147, 112, 219, 0.5) !important;
+  background-color: rgba(147, 112, 219, 0.81) !important;
+  color: white !important;
 }
 
 @media only screen and (max-width: 600px) {

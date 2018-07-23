@@ -24,13 +24,13 @@ class TitleSection extends Component {
         <div className="jumbotron">
           <div className='jumboInner'>
             <h1 className="display-4">An Alternate Vancouver Island Highway</h1>
-            <p className="lead">The Malahat highway has proved dangerous and expensive.</p>
+            <p className="lead pt-3">The Malahat highway has proved dangerous and expensive...</p>
           <p className='lead'>But still, our government's best idea is to continue expanding its madness.</p>
             <hr className="my-4"/>
             <p>This website covers the 10, 20 and 50 year plans for a safer, easier and more functional highway system.</p>
             <p>Let your opinion be heard! Leave a simple 'yes' or 'no' vote.</p>
-            <a className="btn btn-primary btn-lg mr-2 ml-2" role="button" onClick={() => {this.jumpTo('Plan')}}>The Plans</a>
-            <a className="btn btn-info btn-lg" role="button" onClick={() => {this.jumpTo('Vote')}}>Vote Now</a>
+            <a className="btn btn-primary btn-lg mr-2 ml-2 mt-3" role="button" onClick={() => {this.jumpTo('Plan')}}>The Plans</a>
+            <a className="btn btn-info btn-lg mt-3" role="button" onClick={() => {this.jumpTo('Vote')}}>Vote Now</a>
           </div>
         </div>
       </div>

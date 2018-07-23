@@ -6,20 +6,35 @@
   background-image: url("../images/vancouver-island-sunset.jpg");
   background-size: cover;
   border-radius: 0;
+  padding: 0 !important;
 }
 .TitleSection .jumboInner{
   background-color: rgba(255, 255, 255, 0.6);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   padding: 30px;
 }
 .TitleSection .lead{
   font-size: 25px;
+  font-weight: 400;
+}
+.TitleSection h1{
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .TitleSection .jumbotron{
   margin-bottom: 0 !important;
 }
-a.btn{
-  color: white;
+.TitleSection p{
+  font-size: 18px;
 }
+a.btn{
+  color: white !important;
+}
+@media only screen and (max-width: 600px) {
+  .TitleSection h1{
+    font-size: 35px;
+  }
+  .TitleSection .lead{
+    font-size: 20px;
+  }
+}
+
