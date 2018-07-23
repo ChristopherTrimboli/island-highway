@@ -11,16 +11,6 @@ class VoteSection extends Component {
       yesVotes: "",
       voted: false
     };
-    this.getVotes = this.getVotes.bind(this);
-  }
-
-  componentDidMount(){
-    let thanksDiv = document.getElementById('thanksDiv').hidden = true;
-    this.getVotes()
-
-  }
-
-  getVotes(){
     const config = {
       apiKey: "AIzaSyBRoCF05syj98wyzInngl3ZTK3OzTgOv0M",
       authDomain: "new-island-highway.firebaseapp.com",
@@ -28,7 +18,15 @@ class VoteSection extends Component {
       storageBucket: "new-island-highway.appspot.com"
     };
     firebase.initializeApp(config);
+    this.getVotes = this.getVotes.bind(this);
+  }
 
+  componentDidMount(){
+    let thanksDiv = document.getElementById('thanksDiv').hidden = true;
+    this.getVotes()
+  }
+
+  getVotes(){
     const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
     const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
 
@@ -48,41 +46,43 @@ class VoteSection extends Component {
 
   }
 
-  updateVotes(choice){
+  updateVotes(choice) {
+    if (this.state.noVotes !== "" || this.state.yesVotes !== ""){
+      if (this.state.voted === false) {
+        const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
+        const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
+        if (choice === 'no') {
+          const noVotes = {
+            noVotes: this.state.noVotes + 1,
+          };
+          this.setState({
+            noVotes: this.state.noVotes + 1
+          });
+          noRef.set(noVotes.noVotes);
+        }
+        if (choice === 'yes') {
+          const yesVotes = {
+            yesVotes: this.state.yesVotes + 1,
+          };
+          this.setState({
+            yesVotes: this.state.yesVotes + 1
+          });
+          yesRef.set(yesVotes.yesVotes);
+        }
+        this.setState({
+          voted: true
+        });
+        let noButton = document.getElementById('noButton').disabled = true;
+        let yesButton = document.getElementById('yesButton').disabled = true;
+        let thanksDiv = document.getElementById('thanksDiv').hidden = false;
+      }
+      else {
+        let noButton = document.getElementById('noButton').disabled = true;
+        let yesButton = document.getElementById('yesButton').disabled = true;
+        let thanksDiv = document.getElementById('thanksDiv').hidden = false;
+      }
+    }
 
-    if(this.state.voted === false){
-      const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
-      const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
-      if(choice === 'no'){
-        const noVotes = {
-          noVotes: this.state.noVotes + 1,
-        };
-        noRef.set(noVotes.noVotes);
-        this.setState({
-          noVotes: this.state.noVotes + 1
-        });
-      }
-      if(choice === 'yes'){
-        const yesVotes = {
-          yesVotes: this.state.yesVotes + 1,
-        };
-        yesRef.set(yesVotes.yesVotes);
-        this.setState({
-          yesVotes: this.state.yesVotes + 1
-        });
-      }
-      this.setState({
-        voted: true
-      });
-      let noButton = document.getElementById('noButton').disabled = true;
-      let yesButton = document.getElementById('yesButton').disabled = true;
-      let thanksDiv = document.getElementById('thanksDiv').hidden = false;
-    }
-    else{
-      let noButton = document.getElementById('noButton').disabled = true;
-      let yesButton = document.getElementById('yesButton').disabled = true;
-      let thanksDiv = document.getElementById('thanksDiv').hidden = false;
-    }
   }
 
   render() {
