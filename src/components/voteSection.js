@@ -19,10 +19,27 @@ class VoteSection extends Component {
     };
     firebase.initializeApp(config);
     this.getVotes = this.getVotes.bind(this);
+
+    if(localStorage.getItem('hasVoted') === null){
+      localStorage.setItem('hasVoted', 'false');
+    }
   }
 
   componentDidMount(){
-    document.getElementById('thanksDiv').hidden = true;
+    let ifVoted = localStorage.getItem('hasVoted');
+
+    if(ifVoted === 'true'){
+      document.getElementById('thanksDiv').hidden = true;
+      document.getElementById('noButton').disabled = true;
+      document.getElementById('yesButton').disabled = true;
+      document.getElementById('alreadyDiv').hidden = false;
+    }
+    else{
+      document.getElementById('thanksDiv').hidden = true;
+      document.getElementById('alreadyDiv').hidden = true;
+      document.getElementById('noButton').disabled = false;
+      document.getElementById('yesButton').disabled = false;
+    }
     this.getVotes()
   }
 
@@ -47,42 +64,51 @@ class VoteSection extends Component {
   }
 
   updateVotes(choice) {
-    if (this.state.noVotes !== "" || this.state.yesVotes !== ""){
-      if (this.state.voted === false) {
-        const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
-        const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
-        if (choice === 'no') {
-          const noVotes = {
-            noVotes: this.state.noVotes + 1,
-          };
+    let ifVoted = localStorage.getItem('hasVoted');
+    if(ifVoted === 'false'){
+      if (this.state.noVotes !== "" || this.state.yesVotes !== ""){
+        if (this.state.voted === false) {
+          const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
+          const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
+          if (choice === 'no') {
+            const noVotes = {
+              noVotes: this.state.noVotes + 1,
+            };
+            this.setState({
+              noVotes: this.state.noVotes + 1
+            });
+            noRef.set(noVotes.noVotes);
+            localStorage.setItem('hasVoted', 'true')
+          }
+          if (choice === 'yes') {
+            const yesVotes = {
+              yesVotes: this.state.yesVotes + 1,
+            };
+            this.setState({
+              yesVotes: this.state.yesVotes + 1
+            });
+            yesRef.set(yesVotes.yesVotes);
+            localStorage.setItem('hasVoted', 'true')
+          }
           this.setState({
-            noVotes: this.state.noVotes + 1
+            voted: true
           });
-          noRef.set(noVotes.noVotes);
+          document.getElementById('noButton').disabled = true;
+          document.getElementById('yesButton').disabled = true;
+          document.getElementById('thanksDiv').hidden = false;
         }
-        if (choice === 'yes') {
-          const yesVotes = {
-            yesVotes: this.state.yesVotes + 1,
-          };
-          this.setState({
-            yesVotes: this.state.yesVotes + 1
-          });
-          yesRef.set(yesVotes.yesVotes);
+        else {
+          document.getElementById('noButton').disabled = true;
+          document.getElementById('yesButton').disabled = true;
+          document.getElementById('thanksDiv').hidden = false;
         }
-        this.setState({
-          voted: true
-        });
-        document.getElementById('noButton').disabled = true;
-        document.getElementById('yesButton').disabled = true;
-        document.getElementById('thanksDiv').hidden = false;
-      }
-      else {
-        document.getElementById('noButton').disabled = true;
-        document.getElementById('yesButton').disabled = true;
-        document.getElementById('thanksDiv').hidden = false;
       }
     }
-
+    else{
+      document.getElementById('noButton').disabled = true;
+      document.getElementById('yesButton').disabled = true;
+      document.getElementById('alreadyDiv').hidden = false;
+    }
   }
 
   render() {
@@ -112,6 +138,9 @@ class VoteSection extends Component {
                 </div>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4' id='thanksDiv'>
                   <p className='lead'>Thanks for voting!</p>
+                </div>
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4' id='alreadyDiv'>
+                  <p className='lead'>You have already voted.</p>
                 </div>
               </div>
               <div className='row pt-5'>
