@@ -4,7 +4,7 @@ import '../css/getInvolved.css';
 class GetInvolved extends Component {
   render() {
     return (
-      <div className="GetInvolved">
+      <div className="GetInvolved" id='Contact'>
         <div className='row pt-5 pb-3'>
           <div className='col-12'>
             <i className="far fa-comments fa-4x pt-3"/>
