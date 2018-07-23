@@ -8,13 +8,16 @@ class VoteSection extends Component {
     super(props);
     this.state = {
       noVotes: "",
-      yesVotes: ""
+      yesVotes: "",
+      voted: false
     };
     this.getVotes = this.getVotes.bind(this);
   }
 
   componentDidMount(){
+    let thanksDiv = document.getElementById('thanksDiv').hidden = true;
     this.getVotes()
+
   }
 
   getVotes(){
@@ -46,27 +49,39 @@ class VoteSection extends Component {
   }
 
   updateVotes(choice){
-    const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
-    const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
 
-    if(choice === 'no'){
-      const noVotes = {
-        noVotes: this.state.noVotes + 1,
-      };
-      noRef.set(noVotes.noVotes);
+    if(this.state.voted === false){
+      const noRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/no');
+      const yesRef = firebase.database().refFromURL('https://new-island-highway.firebaseio.com/yes');
+      if(choice === 'no'){
+        const noVotes = {
+          noVotes: this.state.noVotes + 1,
+        };
+        noRef.set(noVotes.noVotes);
+        this.setState({
+          noVotes: this.state.noVotes + 1
+        });
+      }
+      if(choice === 'yes'){
+        const yesVotes = {
+          yesVotes: this.state.yesVotes + 1,
+        };
+        yesRef.set(yesVotes.yesVotes);
+        this.setState({
+          yesVotes: this.state.yesVotes + 1
+        });
+      }
       this.setState({
-        noVotes: this.state.noVotes + 1
+        voted: true
       });
+      let noButton = document.getElementById('noButton').disabled = true;
+      let yesButton = document.getElementById('yesButton').disabled = true;
+      let thanksDiv = document.getElementById('thanksDiv').hidden = false;
     }
-
-    if(choice === 'yes'){
-      const yesVotes = {
-        yesVotes: this.state.yesVotes + 1,
-      };
-      yesRef.set(yesVotes.yesVotes);
-      this.setState({
-        yesVotes: this.state.yesVotes + 1
-      });
+    else{
+      let noButton = document.getElementById('noButton').disabled = true;
+      let yesButton = document.getElementById('yesButton').disabled = true;
+      let thanksDiv = document.getElementById('thanksDiv').hidden = false;
     }
   }
 
@@ -87,13 +102,16 @@ class VoteSection extends Component {
                   <h1 className='noCounter pt-5'>{this.state.noVotes}</h1>
                   <hr/>
                   <p>Votes for: "<span className='noSpan'>No</span>"</p>
-                  <button type="button" className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>Vote No</button>
+                  <button type="button" id='noButton' className="btn btn-danger m-3" onClick={() => { this.updateVotes('no') }}>Vote No</button>
                 </div>
                 <div className='column col-lg-6 col-md-6 col-sm-6 col-xs-6 p-0'>
                   <h1 className='yesCounter pt-5'>{this.state.yesVotes}</h1>
                   <hr/>
                   <p>Votes for: "<span className='yesSpan'>Yes</span>"</p>
-                  <button type="button" className="btn btn-success m-3" onClick={() => { this.updateVotes('yes') }}>Vote Yes</button>
+                  <button type="button" id='yesButton' className="btn btn-success m-3" onClick={() => { this.updateVotes('yes') }}>Vote Yes</button>
+                </div>
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4' id='thanksDiv'>
+                  <p className='lead'>Thanks for voting!</p>
                 </div>
               </div>
               <div className='row pt-5'>
