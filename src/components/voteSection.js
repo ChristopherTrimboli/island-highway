@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/voteSection.css';
 import firebase from "firebase";
 
+
 class VoteSection extends Component {
 
   constructor(props) {
@@ -141,11 +142,6 @@ class VoteSection extends Component {
                 </div>
                 <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4' id='alreadyDiv'>
                   <p className='lead'>You have already voted.</p>
-                </div>
-              </div>
-              <div className='row pt-5'>
-                <div className='col'>
-                  <small className="text-muted">Votes data from realtime Firebase database</small>
                 </div>
               </div>
             </div>
