@@ -1,0 +1,13 @@
+.About{
+  position: relative;
+  min-height: 50vh;
+  background-color: #FFFFFF;
+}
+.About .inline{
+  display: inline-block;
+}
+.About img {
+  border-radius: 50%;
+  height: 200px;
+  width: auto;
+}
