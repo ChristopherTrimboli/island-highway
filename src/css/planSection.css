@@ -72,6 +72,16 @@
   color: white !important;
 }
 
+
+.PlanSection .textSection {
+  margin-top: 100px;
+}
+@media only screen and (max-width: 1200px) {
+  .PlanSection .textSection {
+    margin-top: 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .PlanSection .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
     color: black;
