@@ -4,6 +4,9 @@
 .GetInvolved h5{
   font-size: 17px;
   color: #192573;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .GetInvolved .far{
 
