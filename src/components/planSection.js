@@ -157,7 +157,7 @@ class PlanSection extends Component {
                         </p>
                         <p className='card-text lead font-weight-normal'>If a southern route between Vancouver Island and the mainland is to be considered, then a bridge from Salt Spring Island to Prevost Island to Galliano Island would make the most sense.
                         </p>
-                        <p className='card-text lead font-weight-normal'>If this route was already built to mode the ferry terminal , then the infrastructure route would already be in place on the Vancouver Island side.
+                        <p className='card-text lead font-weight-normal'>If this route was built to relocate the ferry terminal, then the infrastructure route would already be in place on the Vancouver Island side.
                         </p>
                       </div>
                     </div>

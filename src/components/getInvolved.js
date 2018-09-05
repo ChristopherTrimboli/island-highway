@@ -13,7 +13,7 @@ class GetInvolved extends Component {
           </div>
           <div className='col-12'>
             <h4 className='pt-3'>Send us your comments!</h4>
-            <h5 className='pt-3'>Contact your local politicians and city council to spread the idea</h5>
+            <h5 className='pt-3'>Contact your local politicians and spread the idea!</h5>
           </div>
         </div>
 

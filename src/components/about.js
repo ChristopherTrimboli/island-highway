@@ -24,7 +24,7 @@ class About extends Component {
           </div>
           <div className='col-lg-4 col-md-12 col-sm-12 col-xs-12 text-left p-4'>
             <h4>The Details</h4>
-            <p className='lead font-weight-normal'>Our proposed new south Vancouver Island highway would leave Victoria, along the Pat Bay highway, to the far end of Sannich peninsula, across to Salt Spring Island
+            <p className='lead font-weight-normal'>Our proposed new south Vancouver Island highway would leave Victoria, along the Pat Bay highway, to the far end of Sannich peninsula, across to Salt Spring Island.
             </p>
             <p className='lead font-weight-normal'>
             The highway would follow along the Salt Spring land mass, coming back across the Sansum narrows proceeding just west of Maple Bay.
@@ -37,7 +37,7 @@ class About extends Component {
             <h4>Failures of the Malahat</h4>
             <p className='lead font-weight-normal'>Collision History</p>
             <ul className="list ml-2">
-              <li>The Aspen Road to Shawnigan Lak segment has had a collision rate of 0.45 collides per million vehicle kilometers which is higher than the provincial average of 0.32 collisions per million vehicle kilometers.</li>
+              <li>The Aspen Road to Shawnigan Lake segment has had a collision rate of 0.45 collides per million vehicle kilometers which is higher than the provincial average of 0.32 collisions per million vehicle kilometers.</li>
               <li>Three fatalities have occurred along this section of the highway within the last 14 months.</li>
             </ul>
             <p className='lead font-weight-normal'>Reliability</p>
